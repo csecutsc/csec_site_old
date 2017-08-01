@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Caesar+Dressing' rel='stylesheet' type='text/css'>
+	
+	<link type="text/css" rel="stylesheet" href="assets/index.css" />
+	<link type="text/css" rel="stylesheet" href="assets/style.css" />
+	<title> Critter Pit </title>
+	<link rel="stylesheet" href="style.css" type="text/css" />
+    
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="chat.js"></script>
+    <script type="text/javascript">
+    
+        // ask user for name with popup prompt    
+        var name = prompt("Enter your chat name:", "Guest");
+        
+        // default name is 'Guest'
+    	if (!name || name === ' ') {
+    	   name = "Guest";	
+    	}
+    	
+    	// strip tags
+    	name = name.replace(/(<([^>]+)>)/ig,"");
+    	
+    	// display name on page
+    	$("#name-area").html("You are: <span>" + name + "</span>");
+    	
+    	// kick off chat
+        var chat =  new Chat();
+    	$(function() {
+    	
+    		 chat.getState(); 
+    		 
+    		 // watch textarea for key presses
+             $("#sendie").keydown(function(event) {  
+             
+                 var key = event.which;  
+           
+                 //all keys including return.  
+                 if (key >= 33) {
+                   
+                     var maxLength = $(this).attr("maxlength");  
+                     var length = this.value.length;  
+                     
+                     // don't allow new content if length is maxed out
+                     if (length >= maxLength) {  
+                         event.preventDefault();  
+                     }  
+                  }  
+    		 																																																});
+    		 // watch textarea for release of key press
+    		 $('#sendie').keyup(function(e) {	
+    		 					 
+    			  if (e.keyCode == 13) { 
+    			  
+                    var text = $(this).val();
+    				var maxLength = $(this).attr("maxlength");  
+                    var length = text.length; 
+                     
+                    // send 
+                    if (length <= maxLength + 1) { 
+                     
+    			        chat.send(text, name);	
+    			        $(this).val("");
+    			        
+                    } else {
+                    
+    					$(this).val(text.substring(0, maxLength));
+    					
+    				}	
+    				
+    				
+    			  }
+             });
+            
+    	});
+    </script>
+</head>
+
+
+<body class="bg" onload="setInterval('chat.update()', 1000)">
+	<div id ="topbar" >
+		<h2>Technical Pre-Alpha (Chrome Support)</h2>
+		<h1>Critter Pit: Humble Beginnings</h1>
+	</div>
+	<div id="wrapper" style="visibility: hidden">
+
+     	<button id=chatlog type="button" onclick="chatLogButton()" disabled>Chat Log       
+     	</button>
+     
+     	<button id=actionlog type="button" onclick = "actionLogButton()">Action Log</button>
+     
+	    <div class="scrollbar" id="style-4">
+     		<div class="force-overflow"></div>
+    	</div>
+    	<div id="chattextarea">
+    	</div>
+    
+    	<div id="actiontextarea">
+    	</div>
+    
+    	<div id="chatbox">
+    	</div>
+    	<form name="message"  onsubmit = "return false;">
+        	<input name="usermsg" style="width: 200px" type="text" id="usermsg" autocomplete = "off"  />
+        	<input name="submitmsg" type="submit"  id="submitmsg" value="uh" onClick = "test(this.form.usermsg.value);"  />
+        
+
+		</form>
+       <div id = "wrap"></div>
+	</div>
+       <script type="text/javascript" src="assets/raphael.js"></script>
+       <script type="text/javascript" src="assets/index.js"></script>
+    </body>
+	<br><br><br>
+	<div id="slideout">
+	  <img src="howtoplay.png" alt="Feedback" />
+	  <div id="slideout_inner">
+		<h2> How to Play </h2>
+		<br><br>
+		<p>
+			<ul style="font-family: 'Nunito', sans-serif; font-size: 14px;">
+				<li>
+					Select a tank (Turtle, Lion), a support (Dove, Donkey), an attacker (Fox, Wolf) and a fourth critter to come off the bench. 
+				</li>
+				<br>
+				<li>
+					Each critter has 4 unique and powerful abilities (Click on critter or critter's portrait to select a critter)
+					<br>
+					Abilities fall under 3 types: (Select ability then select target(s))
+					<ul style="margin-left:12px; font-size: 11px">
+						<li>
+							Block: Self-cast, generally increases the critter's defence
+						</li>
+						<li>
+							Attack: If the target is behind another critter it hits the front critter instead of its initial target
+						</li>
+						<li>
+							Support: Unrestricted - read descriptions
+						</li>
+					</ul>
+				</li><br>
+				<li>
+					Aside from abilities, critters may move and may also perform bench actions (Select critter and select desired position to move to)
+				</li><br>
+				<li>
+					TIP: Move your tank to be in front of the critters you want to protect, then use a block ability to incoming attacks
+				</li><br>
+				<li>
+					Critters cannot attack or be attacked on the bench, but have a passive ability related to the bench and gain 30 energy at the end of each turn compared to the normal 10
+				</li><br>
+				<li>
+					One critter can be on the bench at a time, at least one critter must be on the field, and maximum 3 can be on the field at any given time
+				</li><br>
+				<li>
+					Items are instant 1 time use actions(use items by dragging their picture onto the action bar)
+				</li><br>
+				<li>
+					All actions show up on the action bar, rearrange your turn by dragging the blocks around and delete an action by dragging it off the action bar
+				</li><br>
+				<li>
+					NOTE: Items take effect before abilities when they are triggered at the same time
+				</li><br>
+				<li>
+					Morale: Successful attacks increase your morale while reducing your enemy's. When actions from both players happen at the same second, a coinflip based on morale ratio decides which action gets performed first. 
+				</li>
+			</ul>
+		</p>
+	  </div>
+	</div>
+	<div id="bugslide">
+	  <img src="bugreport.png" alt="Feedback" />
+	  <div id="bugslide_inner">
+		<h2> Report a Bug </h2>
+		<br><br>
+		<form action="action.php" method="post" style="font-family: 'Nunito', sans-serif; font-size: 14px;">
+			<div class="col-md-6 footer-left">
+				<br>Name<br>
+				<input type="text" name="Name" maxlength="50" placeholder="" required="">
+				<br><br>Email<br>
+				<input type="email" name="Email" maxlength="70" placeholder="example@xyz.c" required="">
+				<br><br>Bug Description (Max 1000 char)<br>
+				<textarea name="Message" maxlength="1000" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}" required="">
+				</textarea>	
+				<br>
+				<input type="submit" name="submit" value="Report Bug">	
+			</div>				
+		</form>
+	  </div>
+	</div>
+	<div id="chatRoom" style="display:block; visibility: hidden">
+		<div id="page-wrap">
+			<p id="name-area"></p>
+			<div id="chat-wrap"><div id="chat-area"></div></div>
+			<form id="send-message-area">
+				<p>Your&nbsp;message:</p>
+				<br><br>
+				<textarea placeholder="Press Enter to Send Message" id="sendie" maxlength = '100' ></textarea>
+			</form>
+		</div>
+	</div>
+	<br>
+    <div id="toTop" onclick="hideShowChat()"style="display: block;">
+		
+	</div>
+	<script>
+	var x = 1;
+	function hideShowChat(){
+		if(x == 0){
+			document.getElementById("chatRoom").style.visibility = "hidden";
+			x = 1;
+		}
+		else{
+			document.getElementById("chatRoom").style.visibility = "visible";
+			x = 0;
+		}
+	}
+	</script>
+</html>

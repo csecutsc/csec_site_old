@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>https://www.utsc.utoronto.ca/~csec/</loc>
+  <lastmod>2016-11-02T09:34:06+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://www.utsc.utoronto.ca/~csec/index.html</loc>
+  <lastmod>2016-11-02T09:34:06+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://www.utsc.utoronto.ca/~csec/team.html</loc>
+  <lastmod>2016-11-16T05:17:54+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://www.utsc.utoronto.ca/~csec/resources.html</loc>
+  <lastmod>2016-11-27T22:37:17+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://www.utsc.utoronto.ca/~csec/slides/W1_CSEC_Orientation.pdf</loc>
+  <lastmod>2016-10-22T22:35:53+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://www.utsc.utoronto.ca/~csec/slides/W2_Intro_to_C++.pdf</loc>
+  <lastmod>2016-10-27T22:35:45+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://www.utsc.utoronto.ca/~csec/slides/W3_Analyzing_Problems.pdf</loc>
+  <lastmod>2016-10-22T22:42:03+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://www.utsc.utoronto.ca/~csec/slides/W4_Data_Structures.pdf</loc>
+  <lastmod>2016-10-21T18:11:06+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://www.utsc.utoronto.ca/~csec/slides/W5_Recursion.pdf</loc>
+  <lastmod>2016-11-16T21:15:31+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://www.utsc.utoronto.ca/~csec/slides/S1_World_of_Work.pdf</loc>
+  <lastmod>2016-10-24T21:39:59+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://www.utsc.utoronto.ca/~csec/slides/S2_Web_Development.pdf</loc>
+  <lastmod>2016-10-28T05:53:11+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://www.utsc.utoronto.ca/~csec/slides/S3_Build_a_PC.pdf</loc>
+  <lastmod>2016-11-27T22:34:36+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://www.utsc.utoronto.ca/~csec/syllabus.html</loc>
+  <lastmod>2016-11-02T09:33:24+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://www.utsc.utoronto.ca/~csec/documents/CSEC_Recognition_letter.pdf</loc>
+  <lastmod>2016-07-23T18:45:20+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://www.utsc.utoronto.ca/~csec/documents/CSEC_Syllabus_16-17.pdf</loc>
+  <lastmod>2016-07-23T18:16:28+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://www.utsc.utoronto.ca/~csec/documents/CSEC_Constitution_16-17.pdf</loc>
+  <lastmod>2016-05-20T05:57:55+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+</urlset>
